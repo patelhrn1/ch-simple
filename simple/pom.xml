@@ -12,10 +12,7 @@
   <artifactId>simple</artifactId>
   <packaging>jar</packaging>
   <name>Simple Chapter Project Example</name>
-         <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sonar.language>java</sonar.language>
-  </properties>
+        
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
