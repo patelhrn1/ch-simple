@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       agent any
       steps {
-        sh 'mvn clean compile'
+        mvn -f pom.xml clean compile
         echo 'Hello World'
       }
     }
