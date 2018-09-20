@@ -7,8 +7,10 @@ pipeline {
       }
     }
     stage ('codeAnalysis'){
+      steps {
       withSonarQubeEnv('Sonar'){
         bat 'mvn sonar:sonar'
+        }
       }
     }
  }
