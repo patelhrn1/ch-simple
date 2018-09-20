@@ -9,8 +9,8 @@ node {
   bat "git clean -f && git reset --hard origin/master"
   def mvnHome = tool 'Maven'
   // we want to pick up the version from the pom
-  def pom = readMavenPom file: 'pom.xml'
-  def version = pom.version.replace("-SNAPSHOT", ".${currentBuild.number}")
+  //def pom = readMavenPom file: 'pom.xml'
+  //def version = pom.version.replace("-SNAPSHOT", ".${currentBuild.number}")
   // Mark the code build 'stage'....
   stage 'Build'
   // Run the maven build this is a release that keeps the development version 
