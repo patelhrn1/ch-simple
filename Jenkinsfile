@@ -1,22 +1,14 @@
-pipeline {
-  agent any
-  stages{
-  stage ('build'){
-    steps{
-    bat 'mvn clean'
-      }
+// Building Sampleapp Jenkins Pipeline.
+
+pipeline{
+    agent any
+    tools{
+        maven: 'maven 3.5.4'
+        jdk8:
+        ant: 'ant'
     }
-    stage ('codeAnalysis'){
-      steps {
-      withSonarQubeEnv('Sonar'){
-        bat 'mvn sonar:sonar'
-        }
-      }
+    triggers {
+        //Triggers when any changes identified on bitbucket repository.
+        githubPush()
     }
- }
-  post { 
-   always { 
-         echo 'I will always say Hello again!'
-    }
-  }
 }
